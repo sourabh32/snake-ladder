@@ -7,7 +7,7 @@ export const gameContext = createContext({
     isPlayer1:true,
     setIsPlayer1:()=>{},
     setIsPlayer2:()=>{},
-    
+    winner:null,
     generateRandom:()=>{}
 })
 
@@ -25,7 +25,7 @@ export const snakes ={
 
 export const ladder = {
     74:92,
-    62:81,
+    65:81,
     42:65,
     13:46,
     4:25,
@@ -42,6 +42,7 @@ const GameProvider = ({children}) => {
 const [player1,setplayer1] = useState(1)
 const [player2,setplayer2] = useState(1)
 const [isPlayer1,setIsPlayer1] = useState(true)
+const [winner,setWinner] = useState(null)
 
 const generateRandom = () =>{
     const val = Math.ceil(Math.random()*6)
@@ -88,8 +89,20 @@ const checkLadder = ()=>{
         },800)
       }
 }
+
+const checkWinner = () => {
+    if (player1 === 100) {
+      setWinner("Player 1");
+      console.log("red")
+    } else if (player2 === 100) {
+      setWinner("Player 2");
+      console.log("blue")
+    }
+  };
 useEffect(()=>{
     checkSnake()
+    checkLadder()
+    checkWinner()
 console.log(player1,player2)
 },[player1,player2])
 

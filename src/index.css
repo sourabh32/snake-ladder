@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.board{
+ 
+  background-repeat: no-repeat;
+    margin: 3% auto;
+    width: 50vw;
+    height: 80vh;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(10,1fr);
+}
+.square  {
+    padding: 2px;
+ border: 1px solid black;
+ font-size: 0.5rem;
+ text-align: end;
+}
+.square img{
+    width: 45%;
+    height: 45%;
+    border-radius: 50%;
+
+}
+.snake{
+  background-image: url("./assets/snakes.png");
+ background-size: contain;
+ background-position: center;
+ background-repeat: no-repeat;
+}
+.ladder{
+  background-image: url("./assets/ladder.png");
+  background-size: contain;
+ background-position: center;
+ background-repeat: no-repeat;
+}
+.yellow{
+  width: 60%;
+  height: 60%;
+  background-image: url("./assets/coinyellow.png");
+  background-size: contain;
+ background-position: center;
+ background-repeat: no-repeat;
+ 
+}
+.blue{
+  width: 60%;
+  height: 60%;
+  background-image: url("./assets/coinred.png");
+  background-size: contain;
+ background-position: center;
+ background-repeat: no-repeat;
+}
+
+
+
+.btn {
+    
+  background-color: rgba(97, 64, 64, 0.05);
+  border-radius: 8px;
+  border-width: 0;
+  color: #333333;
+  cursor: pointer;
+  
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 10px 12px;
+  text-align: center;
+  transition: all 200ms;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh; 
+}
+
+
+@media (max-width: 430px) {
+    .board {
+      margin: 10% auto;
+      width: 90vw;
+      height: 40vh;
+    }
+  }
+  
+  @media (max-width: 920px) {
+    .board {
+      margin: 15% auto;
+      width: 85vw;
+      height: 50vh;
+    }
+  }
+  

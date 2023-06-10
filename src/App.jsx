@@ -10,8 +10,11 @@ function App() {
 
   return (
     <>
-   <Board   />
+    <div className="main">
+    <Board   />
    <Dice  />
+    </div>
+  
   
     </>
   )
